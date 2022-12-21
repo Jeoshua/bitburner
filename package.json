@@ -124,7 +124,7 @@
     "test:watch": "jest --watch",
     "watch": "webpack --watch --mode production",
     "watch:dev": "webpack --watch --mode development",
-    "electron": "sh ./tools/package-electron.sh",
+    "electron": "bash ./tools/package-electron.sh",
     "electron:packager": "electron-packager .package bitburner --all --out .build --overwrite --icon .package/icon.png --no-prune",
     "electron:packager-all": "electron-packager .package bitburner --all --out .build --overwrite --icon .package/icon.png",
     "electron:packager-win": "electron-packager .package bitburner --platform win32 --arch x64 --out .build --overwrite --icon .package/icon.png",
@@ -132,7 +132,7 @@
     "electron:packager-linux": "electron-packager .package bitburner --platform linux --arch x64 --out .build --overwrite --icon .package/icon.png",
     "allbuild": "npm run build && npm run electron && git add --all && git commit -m \"allbuild commit $(git rev-parse --short HEAD)\" && git push -u origin dev",
     "preversion": "npm install && npm run test",
-    "version": "sh ./tools/build-release.sh && git add --all",
+    "version": "bash ./tools/build-release.sh && git add --all",
     "postversion": "git push -u origin dev && git push --tags",
     "changelog": "node tools/fetch-changelog/index.js --from=$(cat last_changelog_hash) > changelog.md"
   }
